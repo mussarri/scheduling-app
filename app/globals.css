@@ -2,10 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @apply w-screen h-screen overflow-x-hidden overflow-y-scroll
+}
+
+small {
+  @apply text-red-500
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
+    --foreground: 222.2 84% 4.9%;
       --card: 0 0% 100%;
       --card-foreground: 222.2 84% 4.9%;
       --popover: 0 0% 100%;
@@ -63,6 +78,7 @@
   * {
     @apply border-border;
   }
+
     body {
     @apply bg-background text-foreground;
   }

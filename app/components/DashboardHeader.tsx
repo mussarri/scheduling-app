@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { signOut } from "../lib/auth";
+import { signOut } from "@/lib/auth";
 
 const DashboardHeader = ({ userImage }: { userImage: string }) => {
   return (

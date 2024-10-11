@@ -1,7 +1,21 @@
 import { redirect } from "next/navigation";
-import { auth } from "../lib/auth";
+import { auth } from "@/lib/auth";
 import DashboardLinks from "../components/DashboardLinks";
 import DashboardHeader from "../components/DashboardHeader";
+import { prisma } from "@/lib/db";
+
+async function getData(id: string) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: id,
+    },
+    select: {
+      userName: true,
+    },
+  });
+  if (!user?.userName) return redirect("/onboarding");
+  return user;
+}
 
 export default async function DashboardLayout({
   children,
@@ -12,6 +26,7 @@ export default async function DashboardLayout({
   if (!session?.user) {
     redirect("/");
   }
+  const data = await getData(session.user?.id as string);
 
   return (
     <div className="flex">

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 import AuthModal from "./AuthModal";
 import AuthButton from "./AuthButton";
-import { signIn } from "../lib/auth";
+import { signIn } from "@/lib/auth";
 
 export default function SignIn() {
   return (
