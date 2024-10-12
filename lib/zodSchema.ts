@@ -45,3 +45,8 @@ export const onBoardingSchemaValidation = (options?: {
       ),
   });
 };
+
+export const settingsSchema = z.object({
+  fullName: z.string().min(3).max(50),
+  image: z.string(),
+});

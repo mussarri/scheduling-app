@@ -5,8 +5,8 @@ import AuthModal from "./AuthModal";
 
 const Navbar = () => {
   return (
-    <div className="w-full border">
-      <div className="flex py-5 justify-between items-center max-width">
+    <div className="w-full border-b">
+      <div className="flex p-5 justify-between items-center max-width">
         <Link href="/">
           <h4 className="text-3xl font-semibold">
             Sari
